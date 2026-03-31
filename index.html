@@ -830,5 +830,136 @@
             });
         }
     </script>
+    <div id="faq-chatbot" class="fixed bottom-6 right-6 z-[9999]">
+    <button id="chatbot-toggle" class="w-14 h-14 rounded-full bg-blue-600 text-white shadow-xl hover:bg-blue-700 transition flex items-center justify-center">
+        <i class="fa-solid fa-comment-dots text-xl"></i>
+    </button>
+
+    <div id="chatbot-window" class="hidden absolute bottom-20 right-0 w-[360px] max-w-[92vw] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+        <div class="bg-slate-900 text-white px-5 py-4 flex items-center justify-between">
+            <div>
+                <p class="text-sm font-bold">Assistant FAQ</p>
+                <p class="text-[11px] text-slate-300">Réponses rapides à vos questions</p>
+            </div>
+            <button id="chatbot-close" class="text-white/80 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div id="chatbot-messages" class="p-4 bg-slate-50 h-[420px] overflow-y-auto space-y-4">
+            <div class="flex justify-start">
+                <div class="max-w-[85%] bg-white border border-slate-200 rounded-2xl rounded-bl-md px-4 py-3 text-sm text-slate-700 shadow-sm">
+                    Bonjour, je peux répondre aux questions les plus fréquentes sur notre accompagnement IA.
+                </div>
+            </div>
+
+            <div class="space-y-2" id="chatbot-questions">
+                <button class="faq-question w-full text-left px-4 py-3 rounded-2xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-blue-300 hover:bg-blue-50 transition" data-answer="answer1">
+                    Faut-il déjà avoir un projet IA défini ?
+                </button>
+
+                <button class="faq-question w-full text-left px-4 py-3 rounded-2xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-blue-300 hover:bg-blue-50 transition" data-answer="answer2">
+                    En combien de temps peut-on voir des résultats ?
+                </button>
+
+                <button class="faq-question w-full text-left px-4 py-3 rounded-2xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-blue-300 hover:bg-blue-50 transition" data-answer="answer3">
+                    À qui s’adresse cet accompagnement ?
+                </button>
+
+                <button class="faq-question w-full text-left px-4 py-3 rounded-2xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-blue-300 hover:bg-blue-50 transition" data-answer="answer4">
+                    Intervenez-vous aussi sur le déploiement ?
+                </button>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-slate-200 bg-white">
+            <a href="#contact" class="block w-full text-center bg-blue-600 text-white px-4 py-3 rounded-2xl text-sm font-bold hover:bg-blue-700 transition">
+                Échanger avec un expert
+            </a>
+        </div>
+    </div>
+</div>
+    <script>
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    const faqAnswers = {
+        answer1: "Non. Nous intervenons souvent avant le lancement d’un projet pour aider la direction à clarifier les priorités, les usages les plus utiles et les premières décisions à prendre.",
+        answer2: "Notre approche vise des premiers résultats visibles rapidement. L’objectif est de structurer une trajectoire claire et de démontrer la valeur en quelques semaines, avec une logique de preuve en 90 jours.",
+        answer3: "Nous accompagnons principalement les dirigeants de PME et ETI, les membres de CODIR, les directions métiers, les COO et les DSI qui veulent transformer l’IA en impact concret.",
+        answer4: "Oui. Nous pouvons intervenir en amont sur la stratégie, la priorisation et la gouvernance, puis accompagner le déploiement des usages retenus dans l’organisation."
+    };
+
+    chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.classList.toggle('hidden');
+    });
+
+    chatbotClose.addEventListener('click', () => {
+        chatbotWindow.classList.add('hidden');
+    });
+
+    function appendUserMessage(text) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'flex justify-end';
+
+        const bubble = document.createElement('div');
+        bubble.className = 'max-w-[85%] bg-blue-600 text-white rounded-2xl rounded-br-md px-4 py-3 text-sm shadow-sm';
+        bubble.textContent = text;
+
+        wrapper.appendChild(bubble);
+        chatbotMessages.appendChild(wrapper);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function appendBotMessage(text) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'flex justify-start';
+
+        const bubble = document.createElement('div');
+        bubble.className = 'max-w-[85%] bg-white border border-slate-200 rounded-2xl rounded-bl-md px-4 py-3 text-sm text-slate-700 shadow-sm';
+        bubble.textContent = text;
+
+        wrapper.appendChild(bubble);
+        chatbotMessages.appendChild(wrapper);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function appendTyping() {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'flex justify-start';
+        wrapper.id = 'typing-indicator';
+
+        const bubble = document.createElement('div');
+        bubble.className = 'max-w-[85%] bg-white border border-slate-200 rounded-2xl rounded-bl-md px-4 py-3 text-sm text-slate-500 shadow-sm';
+        bubble.textContent = '...';
+
+        wrapper.appendChild(bubble);
+        chatbotMessages.appendChild(wrapper);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function removeTyping() {
+        const typing = document.getElementById('typing-indicator');
+        if (typing) typing.remove();
+    }
+
+    faqQuestions.forEach(button => {
+        button.addEventListener('click', () => {
+            const question = button.textContent.trim();
+            const answerKey = button.getAttribute('data-answer');
+
+            appendUserMessage(question);
+            appendTyping();
+
+            setTimeout(() => {
+                removeTyping();
+                appendBotMessage(faqAnswers[answerKey]);
+            }, 500);
+        });
+    });
+</script>
 </body>
 </html>
