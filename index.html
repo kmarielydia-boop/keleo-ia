@@ -692,16 +692,29 @@
             <div class="bg-white p-6 sm:p-10 rounded-[2.5rem] shadow-2xl max-w-3xl mx-auto border border-white/10 relative">
                 <form id="contact-form" class="space-y-6 text-left">
 
-
         <div class="grid md:grid-cols-2 gap-6">
         <div>
             <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                Nom Complet
+                Nom
             </label>
             <input 
                 type="text" 
                 name="nom"
-                placeholder=" Jean Dupont" 
+                placeholder="Dupont" 
+                required
+                class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+            >
+        </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+                Prénom
+            </label>
+            <input 
+                type="text" 
+                name="prénom"
+                placeholder=" Jean" 
                 required
                 class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
             >
@@ -1002,6 +1015,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
     const data = {
         nom: form.nom.value,
+        prenom: form.prenom.value,
         organisation: form.organisation.value,
         fonction: form.fonction.value,
         email: form.email.value,
