@@ -690,90 +690,136 @@
             </div>
 
             <div class="bg-white p-6 sm:p-10 rounded-[2.5rem] shadow-2xl max-w-3xl mx-auto border border-white/10 relative">
-                <form class="space-y-6 text-left" onsubmit="event.preventDefault();">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                                Nom complet
-                            </label>
-                            <input type="text" placeholder="Jean Dupont" class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition">
-                        </div>
+                <form id="contact-form" class="space-y-6 text-left">
 
-                        <div>
-                            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                                Organisation
-                            </label>
-                            <input type="text" placeholder="Entreprise" class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition">
-                        </div>
-                    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+                Nom 
+            </label>
+            <input 
+                type="text" 
+                name="nom"
+                placeholder="Jean" 
+                required
+                class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+            >
+        </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                                Fonction
-                            </label>
-                            <input type="text" placeholder="CEO / DG / CODIR / COO" class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition">
-                        </div>
+        <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+                Prénom
+            </label>
+            <input 
+                type="text" 
+                name="prénom"
+                placeholder="Dupont" 
+                required
+                class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+            >
+        </div>
 
-                        <div>
-                            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                                Email professionnel
-                            </label>
-                            <input type="email" placeholder="jean.dupont@entreprise.fr" class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition">
-                        </div>
-                    </div>
+        <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+                Organisation
+            </label>
+            <input 
+                type="text" 
+                name="organisation"
+                placeholder="Entreprise" 
+                required
+                class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+            >
+        </div>
+    </div>
 
-                    <div>
-                        <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                            Sujet principal
-                        </label>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+                Fonction
+            </label>
+            <input 
+                type="text" 
+                name="fonction"
+                placeholder="CEO / DG / CODIR / COO"
+                class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+            >
+        </div>
 
-                        <select class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition">
-                            <option value="">Sélectionner un sujet</option>
-                            <option value="Clarifier notre trajectoire IA">Clarifier notre trajectoire IA</option>
-                            <option value="Prioriser des cas d’usage IA">Prioriser des cas d’usage IA</option>
-                            <option value="Aligner le CODIR sur l’IA">Aligner le CODIR sur l’IA</option>
-                            <option value="Passer d’un POC à une vraie preuve de valeur">Passer d’un POC à une vraie preuve de valeur</option>
-                            <option value="Structurer la gouvernance IA">Structurer la gouvernance IA</option>
-                        </select>
-                    </div>
+        <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+                Email professionnel
+            </label>
+            <input 
+                type="email" 
+                name="email"
+                placeholder="jean.dupont@entreprise.fr" 
+                required
+                class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+            >
+        </div>
+    </div>
 
-                    <div>
-                        <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                            Taille de l’organisation
-                        </label>
+    <div>
+        <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+            Sujet principal
+        </label>
 
-                        <select class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition">
-                            <option value="">Sélectionner</option>
-                            <option value="PME">PME</option>
-                            <option value="ETI">ETI</option>
-                            <option value="Grande entreprise">Grande entreprise</option>
-                        </select>
-                    </div>
+        <select 
+            name="sujet_principal"
+            required
+            class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+        >
+            <option value="">Sélectionner un sujet</option>
+            <option value="Clarifier notre trajectoire IA">Clarifier notre trajectoire IA</option>
+            <option value="Prioriser des cas d’usage IA">Prioriser des cas d’usage IA</option>
+            <option value="Aligner le CODIR">Aligner le CODIR</option>
+            <option value="Passer d’un POC à la valeur">Passer d’un POC à la valeur</option>
+            <option value="Structurer la gouvernance IA">Structurer la gouvernance IA</option>
+        </select>
+    </div>
 
-                    <div>
-                        <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
-                            Niveau de maturité IA
-                        </label>
+    <div>
+        <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+            Niveau de maturité IA
+        </label>
 
-                        <select class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition">
-                            <option value="">Sélectionner</option>
-                            <option value="Nous explorons le sujet">Nous explorons le sujet</option>
-                            <option value="Nous testons déjà quelques outils">Nous testons déjà quelques outils</option>
-                            <option value="Nous avons des POC en cours">Nous avons des POC en cours</option>
-                            <option value="Nous voulons déployer à l’échelle">Nous voulons déployer à l’échelle</option>
-                        </select>
-                    </div>
+        <select 
+            name="maturite_ia"
+            required
+            class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+        >
+            <option value="">Sélectionner</option>
+            <option value="Nous explorons le sujet">Nous explorons le sujet</option>
+            <option value="Nous testons déjà quelques outils">Nous testons déjà quelques outils</option>
+            <option value="Nous avons des POC en cours">Nous avons des POC en cours</option>
+            <option value="Nous voulons déployer à l’échelle">Nous voulons déployer à l’échelle</option>
+        </select>
+    </div>
 
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                        <button type="submit" class="sm:flex-1 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-center hover:bg-blue-700 transition shadow-lg btn-shadow whitespace-nowrap">
-                            Demander un échange stratégique
-                        </button>
+    <div>
+        <label class="block text-slate-700 text-sm font-bold mb-2 ml-1">
+            Message
+        </label>
+        <textarea
+            name="message"
+            rows="5"
+            placeholder="Décrivez brièvement votre contexte ou votre besoin"
+            class="w-full px-5 py-4 rounded-2xl border border-slate-200 text-slate-900 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 transition"
+        ></textarea>
+    </div>
 
-                        <a href="mailto:contact@keleo.fr" class="sm:w-auto bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold text-center hover:bg-slate-50 hover:border-blue-400 transition whitespace-nowrap">
-                            Nous écrire
-                        </a>
-                    </div>
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+        <button type="submit" class="sm:flex-1 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-center hover:bg-blue-700 transition shadow-lg btn-shadow">
+            Demander un échange stratégique
+        </button>
+
+        <a href="mailto:contact@keleo.fr" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold text-center hover:bg-slate-50 hover:border-blue-400 transition">
+            Nous écrire
+        </a>
+    </div>
+
+</form>
 
                     <div class="flex items-center justify-center space-x-2 text-[10px] text-slate-400 mt-6">
                         <i class="fa-solid fa-lock"></i>
@@ -961,5 +1007,6 @@
         });
     });
 </script>
+    
 </body>
 </html>
