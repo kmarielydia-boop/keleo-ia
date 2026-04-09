@@ -1007,6 +1007,37 @@
         });
     });
 </script>
-    
+
+    <script>
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const data = {
+        nom: form.nom.value,
+        organisation: form.organisation.value,
+        fonction: form.fonction.value,
+        email: form.email.value,
+        sujet: form.sujet_principal.value,
+        maturite: form.maturite_ia.value
+    };
+
+    try {
+        await fetch("https://hook.eu1.make.com/x5xmqmnk2r6x77cs27k1yi5k1qm2ul6y", {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        window.location.href = "/merci.html";
+
+    } catch (error) {
+        alert("Erreur lors de l'envoi.");
+    }
+});
+</script>
 </body>
 </html>
