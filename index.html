@@ -1069,6 +1069,16 @@ if (formEl) {
                 },
                 body: JSON.stringify(data)
             });
+
+            // Tracking formulaire envoyé
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+    event: "form_submit_ia",
+    form_name: "contact_keleo_ia",
+    sujet_principal: data.sujet,
+    maturite_ia: data.maturite
+});
+            
         } catch (error) {
             console.error("Erreur webhook :", error);
         }
@@ -1098,6 +1108,20 @@ if (formEl) {
 } else {
     console.error("Formulaire introuvable : #contact-form");
 }
+    </script>
+    <script>
+window.addEventListener("message", function(e) {
+    if (!e.data || !e.data.event) return;
+
+    if (typeof e.data.event === "string" && e.data.event.indexOf("calendly.") === 0) {
+        if (e.data.event === "calendly.event_scheduled") {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: "calendly_event_scheduled"
+            });
+        }
+    }
+});
 </script>
 
 </body>
