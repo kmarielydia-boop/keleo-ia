@@ -1021,8 +1021,34 @@
 </script>
     
 <script>
-document.getElementById("contact-form").addEventListener("submit", function(e) {
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
     e.preventDefault();
+
+    const form = e.target;
+
+    const data = {
+        prenom: form.prenom.value,
+        nom: form.nom.value,
+        organisation: form.organisation.value,
+        fonction: form.fonction.value,
+        email: form.email.value,
+        sujet: form.sujet_principal.value,
+        maturite: form.maturite_ia.value,
+        message: form.message.value
+    };
+
+    try {
+        await fetch("https://hook.eu1.make.com/x5xmqmnk2r6x77cs27k1yi5k1qm2ul6y", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+    } catch (error) {
+        console.error("Erreur webhook :", error);
+    }
+
     window.location.href = "https://kmarielydia-boop.github.io/keleo-ia/merci.html";
 });
 </script>
