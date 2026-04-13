@@ -1019,43 +1019,13 @@
         });
     });
 </script>
-
-    <script>
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
-
-    const form = e.target;
-
-    const data = {
-        nom: form.nom.value,
-        prenom: form.prenom.value,
-        organisation: form.organisation.value,
-        fonction: form.fonction.value,
-        email: form.email.value,
-        sujet: form.sujet_principal.value,
-        maturite: form.maturite_ia.value,
-        message: form.message.value
-    };
-
-    try {
-        const response = await fetch("https://hook.eu1.make.com/x5xmqmnk2r6x77cs27k1yi5k1qm2ul6y", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (!response.ok) {
-            throw new Error("Erreur webhook");
-        }
-
-        window.location.href = "/https://kmarielydia-boop.github.io/keleo-ia/merci.html";
-    } catch (error) {
-        console.error(error);
-        alert("Erreur lors de l'envoi du formulaire.");
-    }
+    window.location.href = "https://kmarielydia-boop.github.io/keleo-ia/merci.html";
 });
 </script>
+
 </body>
 </html>
