@@ -844,6 +844,24 @@
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full"></div>
     </footer>
 
+    <div id="calendly-section" class="hidden mt-8">
+    <div class="bg-white p-6 sm:p-10 rounded-[2.5rem] shadow-2xl max-w-3xl mx-auto border border-white/10 relative">
+        <div class="text-center mb-6">
+            <h3 class="text-2xl font-black text-slate-900 mb-3">
+                Choisissez votre créneau
+            </h3>
+            <p class="text-slate-600">
+                Votre demande a bien été envoyée. Réservez maintenant votre échange stratégique de 30 minutes.
+            </p>
+        </div>
+
+        <div
+            id="calendly-inline-widget"
+            class="min-w-[320px] h-[760px] rounded-2xl overflow-hidden"
+        ></div>
+    </div>
+</div>
+
     <!-- Script menu mobile -->
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -1021,37 +1039,66 @@
 </script>
     
 <script>
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
-    e.preventDefault();
+const formEl = document.getElementById("contact-form");
+const calendlySection = document.getElementById("calendly-section");
+const calendlyWidget = document.getElementById("calendly-inline-widget");
 
-    const form = e.target;
+if (formEl) {
+    formEl.addEventListener("submit", async function(e) {
+        e.preventDefault();
 
-    const data = {
-        prenom: form.prenom.value,
-        nom: form.nom.value,
-        organisation: form.organisation.value,
-        fonction: form.fonction.value,
-        email: form.email.value,
-        sujet: form.sujet_principal.value,
-        maturite: form.maturite_ia.value,
-        message: form.message.value
-    };
+        const data = {
+            prenom: formEl.prenom.value,
+            nom: formEl.nom.value,
+            organisation: formEl.organisation.value,
+            fonction: formEl.fonction.value,
+            email: formEl.email.value,
+            sujet: formEl.sujet_principal.value,
+            maturite: formEl.maturite_ia.value,
+            message: formEl.message.value
+        };
 
-    try {
-        await fetch("https://hook.eu1.make.com/x5xmqmnk2r6x77cs27k1yi5k1qm2ul6y", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+        const fullName = `${data.prenom} ${data.nom}`.trim();
+
+        try {
+            await fetch("https://hook.eu1.make.com/x5xmqmnk2r6x77cs27k1yi5k1qm2ul6y", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+        } catch (error) {
+            console.error("Erreur webhook :", error);
+        }
+
+        // Cache le formulaire
+        formEl.closest(".bg-white").classList.add("hidden");
+
+        // Affiche Calendly
+        calendlySection.classList.remove("hidden");
+
+        // Nettoie le widget si besoin
+        calendlyWidget.innerHTML = "";
+
+        // Initialise Calendly inline
+        Calendly.initInlineWidget({
+            url: "https://calendly.com/marie-lydia-kodok-keleo/30min",
+            parentElement: calendlyWidget,
+            prefill: {
+                name: fullName,
+                email: data.email
+            }
         });
-    } catch (error) {
-        console.error("Erreur webhook :", error);
-    }
 
-    window.location.href = "https://calendly.com/marie-lydia-kodok-keleo/30min";
-});
+        // Scroll vers Calendly
+        calendlySection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+} else {
+    console.error("Formulaire introuvable : #contact-form");
+}
 </script>
 
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
