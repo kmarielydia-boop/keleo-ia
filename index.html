@@ -603,46 +603,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- SECTION BÉNÉFICES -->
-    <section id="benefices" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4">Ce que ça change concrètement</h2>
-                <h3 class="text-4xl font-extrabold text-slate-900">De l'expérimentation isolée à la performance intégrée.</h3>
-            </div>
+     <!-- Trajectoire -->
+        <div class="relative max-w-5xl mx-auto">
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Benefice 1 -->
-                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col shadow-sm hover:shadow-lg transition-all">
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Une vision consolidée</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-8 italic">Centralisez les données critiques dans un environnement cohérent.</p>
-                    <div class="mt-auto pt-6 border-t border-slate-200">
-                        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Expertise SCALIA</p>
-                        <p class="text-xs text-slate-500 mt-1 font-medium italic">Infrastructure sécurisée & Gouvernance data.</p>
+            <!-- Ligne de fond desktop -->
+            <div class="hidden md:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-slate-200 via-blue-200 to-blue-500"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative z-10">
+
+                <!-- Avant -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 bg-white border-2 border-slate-200 rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:border-blue-500 transition-colors">
+                        <i class="fa-solid fa-layer-group text-slate-400 group-hover:text-blue-600 text-xl"></i>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">
+                        Avant
+                    </h4>
+
+                    <h5 class="text-xl font-bold text-slate-900 mb-4">
+                        Données dispersées
+                    </h5>
+
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-xs">
+                        Des outils isolés, des indicateurs contradictoires et des initiatives IA difficiles à relier à une vraie priorité métier.
+                    </p>
+
+                    <div class="mt-6">
+                        <span class="text-[11px] font-medium text-slate-400 italic line-through">
+                            Expérimentations isolées
+                        </span>
                     </div>
                 </div>
 
-                <!-- Benefice 2 -->
-                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col shadow-sm hover:shadow-lg transition-all">
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Des décisions plus rapides</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-8 italic">Des indicateurs fiables pour piloter sans friction.</p>
-                    <div class="mt-auto pt-6 border-t border-slate-200">
-                        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Expertise SCALIA</p>
-                        <p class="text-xs text-slate-500 mt-1 font-medium italic">BI intelligente & Tableaux de bord stratégiques.</p>
+                <!-- Méthode -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 bg-white border-2 border-blue-200 rounded-full flex items-center justify-center mb-8 shadow-md group-hover:border-blue-500 transition-colors">
+                        <i class="fa-solid fa-compass text-blue-600 text-xl"></i>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-2">
+                        Méthode
+                    </h4>
+
+                    <h5 class="text-xl font-bold text-slate-900 mb-4">
+                        Structuration & priorisation
+                    </h5>
+
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-xs">
+                        Clarification des priorités, cadrage des cas d’usage et alignement entre direction, métiers et contraintes techniques.
+                    </p>
+
+                    <div class="mt-6">
+                        <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                            Sprint 90 jours
+                        </span>
                     </div>
                 </div>
 
-                <!-- Benefice 3 -->
-                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col shadow-sm hover:shadow-lg transition-all">
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Une IA utile</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-8 italic">Des usages intégrés aux opérations, pas des expériences isolées.</p>
-                    <div class="mt-auto pt-6 border-t border-slate-200">
-                        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Expertise SCALIA</p>
-                        <p class="text-xs text-slate-500 mt-1 font-medium italic">Déploiement opérationnel & Adoption terrain.</p>
+                <!-- Après -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-8 shadow-lg shadow-blue-200">
+                        <i class="fa-solid fa-bolt-lightning text-white text-xl"></i>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-2">
+                        Après
+                    </h4>
+
+                    <h5 class="text-xl font-bold text-slate-900 mb-4">
+                        Décisions plus rapides
+                    </h5>
+
+                    <p class="text-slate-600 text-sm leading-relaxed max-w-xs">
+                        Une IA intégrée aux opérations, des indicateurs fiables et des résultats mesurables pour piloter sans friction.
+                    </p>
+
+                    <div class="mt-6">
+                        <span class="text-[11px] font-bold text-emerald-600">
+                            <i class="fa-solid fa-arrow-up mr-1"></i>
+                            ROI mesuré & adoption terrain
+                        </span>
                     </div>
                 </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Pourquoi choisir Keleo -->
     <section id="choisir" class="py-16 sm:py-24 bg-slate-900 text-white overflow-hidden">
