@@ -1328,6 +1328,34 @@ function trackEmailClick() {
     });
 }
 </script>
+
+    <!-- Mobile Sticky CTA -->
+<div id="mobile-sticky-cta" class="fixed bottom-4 inset-x-0 z-50 flex justify-center md:hidden opacity-0 pointer-events-none transition-all duration-300">
+    <a href="#contact"
+       class="inline-flex items-center gap-2 bg-blue-600/95 backdrop-blur-md text-white px-6 py-3 rounded-full font-semibold text-sm shadow-2xl">
+
+        <i class="fa-solid fa-calendar-check text-[13px]"></i>
+        <span>Échange stratégique</span>
+
+    </a>
+</div>
+
+<script>
+const mobileStickyCTA = document.getElementById("mobile-sticky-cta");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+        mobileStickyCTA.classList.remove("opacity-0", "pointer-events-none");
+        mobileStickyCTA.classList.add("opacity-100");
+    } else {
+        mobileStickyCTA.classList.add("opacity-0", "pointer-events-none");
+        mobileStickyCTA.classList.remove("opacity-100");
+    }
+});
+</script>
+
+</body>
+</html>
     
 </body>
 
@@ -1344,17 +1372,5 @@ window.addEventListener("scroll", () => {
     }
 });
 </script>
-  <!-- Mobile Sticky CTA -->
-<div id="mobile-sticky-cta" class="fixed bottom-4 inset-x-0 z-50 flex justify-center md:hidden opacity-0 pointer-events-none transition-all duration-300">
-    <a href="#contact"
-       class="inline-flex items-center gap-2 bg-blue-600/95 backdrop-blur-md text-white px-6 py-3 rounded-full font-semibold text-sm shadow-2xl">
-
-        <i class="fa-solid fa-calendar-check text-[13px]"></i>
-
-        <span>Échange stratégique</span>
-
-    </a>
-
-</div>
     
 </html>
