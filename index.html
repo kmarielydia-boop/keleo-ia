@@ -373,87 +373,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
         <!-- BLOCS ENJEUX -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <!-- 3. BLOC PROBLÈMES (Mise en forme robuste & Mobile-ready) -->
+    <section id="constat" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-2xl mb-24">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-600 mb-6">Le Constat</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-8">
+                    Trois points de rupture qui <span class="text-gray-400">paralysent votre valeur.</span>
+                </h3>
+            </div>
 
-            <!-- Bloc 1 -->
-            <div class="p-7 rounded-3xl bg-blue-50/70 border border-blue-100 shadow-sm group hover:border-blue-300 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-diagram-project text-xl"></i>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded-3xl overflow-hidden shadow-sm">
+                
+                <!-- Problème 01 -->
+                <div class="bg-white p-10 md:p-12 group">
+                    <div class="flex items-center space-x-3 mb-10">
+                        <div class="w-2 h-2 rounded-full bg-rose-500"></div>
+                        <span class="text-[10px] font-bold text-slate-400 tracking-widest">01 / DIAGNOSTIC</span>
                     </div>
-
-                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-[11px] font-bold uppercase tracking-[0.14em]">
-                        Stratégique
+                    <h4 class="text-lg font-bold text-slate-900 uppercase tracking-tight mb-6 title-tight">Incertitude <br>Stratégique</h4>
+                    <p class="text-slate-600 text-sm font-light leading-relaxed mb-8">
+                        L'IA est perçue comme une boîte noire. Sans priorité business définie au CODIR, vos investissements s'éparpillent sans créer de levier de croissance réel.
+                    </p>
+                    <div class="pt-6 border-t border-gray-50">
+                        <span class="inline-block px-3 py-1 rounded bg-rose-50 text-rose-600 text-[9px] font-bold uppercase tracking-widest">Risque : Dispersion</span>
                     </div>
                 </div>
 
-                <h4 class="text-[20px] font-extrabold text-slate-900 leading-tight min-h-[72px] mb-5">
-                    L’IA avance sans cap clair.
-                </h4>
-
-                <p class="text-[15px] text-slate-600 leading-[1.8] mb-6">
-
-Les initiatives se multiplient, mais les priorités restent floues.
-</p>
-
-            </div>
-
-            <!-- Bloc 2 -->
-            <div class="p-7 rounded-3xl bg-blue-50/70 border border-blue-100 shadow-sm group hover:border-blue-300 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                <!-- Problème 02 -->
+                <div class="bg-white p-10 md:p-12 group border-y lg:border-y-0 lg:border-x border-gray-100">
+                    <div class="flex items-center space-x-3 mb-10">
+                        <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                        <span class="text-[10px] font-bold text-slate-400 tracking-widest">02 / GOUVERNANCE</span>
                     </div>
-
-                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold uppercase tracking-[0.14em]">
-                        Organisationnel
+                    <h4 class="text-lg font-bold text-slate-900 uppercase tracking-tight mb-6 title-tight">Déficit de <br>Cadre</h4>
+                    <p class="text-slate-600 text-sm font-light leading-relaxed mb-8">
+                        L'absence de règles claires génère du "Shadow IA". Vos managers sont démunis face aux outils, créant des risques de sécurité et de conformité.
+                    </p>
+                    <div class="pt-6 border-t border-gray-50">
+                        <span class="inline-block px-3 py-1 rounded bg-amber-50 text-amber-600 text-[9px] font-bold uppercase tracking-widest">Risque : Saturation</span>
                     </div>
                 </div>
 
-                <h4 class="text-[20px] font-extrabold text-slate-900 leading-tight min-h-[72px] mb-5">
-                    Les usages évoluent.<br>
-                    L’organisation décroche.
-                </h4>
-
-                <p class="text-[15px] text-slate-600 leading-[1.8] mb-6">
-                    Chaque métier expérimente de son côté, sans cadre ni responsabilités claires.
-                </p>
-
-
-            </div>
-
-            <!-- Bloc 3 -->
-            <div class="p-7 rounded-3xl bg-blue-50/70 border border-blue-100 shadow-sm group hover:border-blue-300 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                        <i class="fa-solid fa-chart-line text-xl"></i>
+                <!-- Problème 03 -->
+                <div class="bg-white p-10 md:p-12 group">
+                    <div class="flex items-center space-x-3 mb-10">
+                        <div class="w-2 h-2 rounded-full bg-slate-400"></div>
+                        <span class="text-[10px] font-bold text-slate-400 tracking-widest">03 / EXÉCUTION</span>
                     </div>
-
-                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-[11px] font-bold uppercase tracking-[0.14em]">
-                        Résultats
+                    <h4 class="text-lg font-bold text-slate-900 uppercase tracking-tight mb-6 title-tight">Passage <br>à l'échelle</h4>
+                    <p class="text-slate-600 text-sm font-light leading-relaxed mb-8">
+                        Les prototypes réussis stagnent au stade de gadgets. Le déploiement échoue faute d'une structure capable d'industrialiser les usages métiers.
+                    </p>
+                    <div class="pt-6 border-t border-gray-50">
+                        <span class="inline-block px-3 py-1 rounded bg-gray-50 text-gray-500 text-[9px] font-bold uppercase tracking-widest">Risque : Stagnation</span>
                     </div>
                 </div>
 
-                <h4 class="text-[20px] font-extrabold text-slate-900 leading-tight min-h-[72px] mb-5">
-                    Les POC fonctionnent.<br>
-                    Le passage à l’échelle bloque.
-                </h4>
-
-                <p class="text-[15px] text-slate-600 leading-[1.8] mb-6">
-                   Les expérimentations avancent, sans réelle preuve de valeur
-                </p>
-
-
             </div>
-
         </div>
-
-    </div>
-
-</section>
+    </section>
 
 
    <!-- Conviction -->
