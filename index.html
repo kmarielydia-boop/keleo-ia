@@ -1888,16 +1888,12 @@ if (formEl) {
     formEl.addEventListener("submit", async function(e) {
         e.preventDefault();
 
-        const data = {
-            prenom: formEl.prenom.value,
-            nom: formEl.nom.value,
-            organisation: formEl.organisation.value,
-            fonction: formEl.fonction.value,
-            email: formEl.email.value,
-            sujet: formEl.sujet_principal.value,
-            maturite: formEl.maturite_ia.value,
-            message: formEl.message.value
-        };
+       const data = {
+    prenom: formEl.prenom.value,
+    nom: formEl.nom.value,
+    email: formEl.email.value,
+    telephone: formEl.telephone.value
+};
 
         const fullName = `${data.prenom} ${data.nom}`.trim();
 
